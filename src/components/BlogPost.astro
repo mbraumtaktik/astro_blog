@@ -1,4 +1,75 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, bild } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+
+<li><a href={url}>{title}</a>
+
+</li>
+
+<div class="muuri-item-content">
+    <!-- <NuxtLink :to="`${props.article._path}`"> -->
+        <img src={bild} alt={bild} width="500px" />
+    <!-- </NuxtLink> -->
+    <!-- <ul class="taglist">
+      <li class="tags" v-for="tag in {url}">
+        <a href="">{{ '#' + tag }}</a>
+      </li>
+    </ul> -->
+    <header>
+      <h2>{title}</h2>
+    </header>
+    <section class="excerpt">
+      <!-- <ContentRenderer :value="props.article" :excerpt="true" /> -->
+    </section>
+  </div>
+
+  <style>
+    .muuri-item-content {
+      padding: 0.5rem;
+      position: relative;
+      max-width: 100vw;
+      height: 100%;
+    }
+    
+    .muuri-item-content img {
+      width: 100%;
+    }
+    
+    .excerpt {
+      font-family: 'happy-times-NG', sans-serif
+    }
+    
+    ul.taglist {
+      margin: 2px 0 13px 0;
+      line-height: 13px;
+      list-style: none;
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+      unicode-bidi: isolate;
+    }
+    
+    ul.taglist li {
+      display: inline-block;
+      margin-right: 5px;
+      font: inherit;
+      padding: 0;
+      border: 0;
+      vertical-align: baseline;
+    }
+    
+    ul.taglist li a {
+      font-family: 'VG5000', sans-serif;
+      font-size: 10px;
+      line-height: 0.4;
+      color: #000;
+      text-decoration: none;
+      text-transform: lowercase;
+      outline: 0;
+      vertical-align: baseline;
+    }
+    </style>
